@@ -1,0 +1,171 @@
+---
+// src/components/Collections.astro
+const collections = [
+  {
+    id: "classic",
+    name: "Classic Collection",
+    description: "Timeless designs that never go out of style with premium UV400 protection",
+    glasses: [
+      {
+        name: "Aviator Classic",
+        price: "$159",
+        image: "/assets/images/collections/aviator-classic.jpg",
+        colors: ["Gold", "Silver", "Black"],
+        features: ["Polarized lenses", "Lightweight metal frame", "100% UV protection"]
+      },
+      {
+        name: "Wayfarer Retro",
+        price: "$149",
+        image: "/assets/images/collections/wayfarer-retro.jpg",
+        colors: ["Tortoise", "Black", "Red"],
+        features: ["Acetate frame", "Non-polarized option", "Classic shape"]
+      },
+      {
+        name: "Round Metal",
+        price: "$139",
+        image: "/assets/images/collections/round-metal.jpg",
+        colors: ["Gold", "Rose Gold", "Silver"],
+        features: ["Thin metal frame", "Blue light filter option", "Spring hinges"]
+      }
+    ]
+  },
+  {
+    id: "premium",
+    name: "Premium Collection",
+    description: "High-end materials and advanced lens technology for discerning customers",
+    glasses: [
+      {
+        name: "Carbon Fiber",
+        price: "$299",
+        image: "/assets/images/collections/carbon-fiber.jpg",
+        colors: ["Matte Black", "Carbon"],
+        features: ["Ultra-light carbon frame", "Polarized + anti-reflective", "2-year warranty"]
+      },
+      {
+        name: "Titanium Elite",
+        price: "$349",
+        image: "/assets/images/collections/titanium-elite.jpg",
+        colors: ["Titanium", "Gunmetal"],
+        features: ["Aerospace-grade titanium", "Photochromic lenses", "Adjustable nose pads"]
+      },
+      {
+        name: "Polar Pro",
+        price: "$279",
+        image: "/assets/images/collections/polar-pro.jpg",
+        colors: ["Blue", "Green", "Brown"],
+        features: ["Mirrored polarized lenses", "Hydrophobic coating", "Impact resistant"]
+      }
+    ]
+  },
+  {
+    id: "designer",
+    name: "Designer Collection",
+    description: "Exclusive collaborations with top fashion designers",
+    glasses: [
+      {
+        name: "Cat-Eye Luxe",
+        price: "$459",
+        image: "/assets/images/collections/cat-eye-luxe.jpg",
+        colors: ["Crystal", "Gold", "Pearl"],
+        features: ["Hand-acetate frame", "Gradient lenses", "Signature designer case"]
+      },
+      {
+        name: "Oversized Square",
+        price: "$499",
+        image: "/assets/images/collections/oversized-square.jpg",
+        colors: ["Black", "Tortoise", "Transparent"],
+        features: ["Limited edition", "24k gold accents", "Custom engraving available"]
+      },
+      {
+        name: "Hexagonal Rimless",
+        price: "$599",
+        image: "/assets/images/collections/hexagonal-rimless.jpg",
+        colors: ["Silver", "Gold", "Platinum"],
+        features: ["Rimless design", "Blue-cut lenses", "3-year warranty"]
+      }
+    ]
+  }
+];
+---
+
+<section id="collections" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Collections</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Browse our carefully curated selection of premium sunglasses
+      </p>
+    </div>
+
+    <!-- Collection Navigation Tabs -->
+    <div class="flex justify-center mb-12">
+      <div class="inline-flex rounded-lg bg-white p-1 shadow-sm">
+        {collections.map(collection => (
+          <a 
+            href={`#${collection.id}`} 
+            class="px-6 py-3 rounded-md font-medium text-gray-700 hover:text-amber-600 transition-colors"
+          >
+            {collection.name}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Collection Sections -->
+    {collections.map(collection => (
+      <div id={collection.id} class="mb-20">
+        <div class="mb-10">
+          <h3 class="text-3xl font-bold text-gray-800 mb-2">{collection.name}</h3>
+          <p class="text-gray-600 max-w-2xl">{collection.description}</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {collection.glasses.map(glass => (
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <div class="h-64 bg-gray-100 overflow-hidden">
+                <img 
+                  src={glass.image} 
+                  alt={glass.name} 
+                  class="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-xl font-bold text-gray-800">{glass.name}</h4>
+                  <span class="text-amber-600 font-bold">{glass.price}</span>
+                </div>
+                
+                <div class="mb-4">
+                  <p class="text-sm text-gray-600 mb-2">Available colors:</p>
+                  <div class="flex space-x-2">
+                    {glass.colors.map(color => (
+                      <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">{color}</span>
+                    ))}
+                  </div>
+                </div>
+                
+                <ul class="space-y-2 mb-6">
+                  {glass.features.map(feature => (
+                    <li class="flex items-start text-sm text-gray-600">
+                      <i class="fas fa-check-circle text-amber-500 mt-1 mr-2 text-xs"></i>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div class="flex space-x-3">
+                  <button class="flex-1 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition">
+                    Add to Cart
+                  </button>
+                  <button class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg hover:bg-gray-200 transition">
+                    <i class="far fa-heart text-gray-600"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

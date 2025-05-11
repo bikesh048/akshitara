@@ -1,243 +1,31 @@
 ---
-import { Image } from 'astro:assets';
-import fashionShow1Image from '../assets/images/fashion-show-1.jpg';
-import fashionShow2Image from '../assets/images/fashion-show-2.jpg';
-import fashionShow3Image from '../assets/images/fashion-show-3.jpg';
+// src/components/Hero.astro
 ---
 
-<section class="relative h-screen w-full overflow-hidden">
-  <!-- Carousel Container -->
-  <div class="carousel-container h-full w-full relative">
-    <!-- Slides -->
-    <div class="carousel-slides h-full w-full">
-      <!-- Slide 1 -->
-      <div class="carousel-slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-800 ease-in-out">
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <Image src={fashionShow1Image} alt="Spring Collection" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 flex items-center z-20 px-12">
-          <div class="max-w-2xl">
-            <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-4 transform translate-y-8 opacity-0 transition-all duration-800 ease-out">Spring Collection 2023</h2>
-            <p class="text-xl text-white/90 mb-6 transform translate-y-8 opacity-0 transition-all duration-800 ease-out delay-100">Discover the vibrant colors and flowing silhouettes of our new season</p>
-            <a href="#tickets" class="inline-block bg-accent text-white font-medium py-3 px-8 rounded-full hover:bg-accent/90 transition-colors transform translate-y-8 opacity-0 transition-all duration-800 ease-out delay-200">Get Tickets</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Slide 2 -->
-      <div class="carousel-slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-800 ease-in-out">
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <Image src={fashionShow2Image} alt="Designer Showcase" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 flex items-center z-20 px-12">
-          <div class="max-w-2xl">
-            <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-4 transform translate-y-8 opacity-0 transition-all duration-800 ease-out">Emerging Designers</h2>
-            <p class="text-xl text-white/90 mb-6 transform translate-y-8 opacity-0 transition-all duration-800 ease-out delay-100">Meet the next generation of fashion innovators</p>
-            <a href="#tickets" class="inline-block bg-accent text-white font-medium py-3 px-8 rounded-full hover:bg-accent/90 transition-colors transform translate-y-8 opacity-0 transition-all duration-800 ease-out delay-200">View Schedule</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Slide 3 -->
-      <div class="carousel-slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-800 ease-in-out">
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <Image src={fashionShow3Image} alt="VIP Experience" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 flex items-center z-20 px-12">
-          <div class="max-w-2xl">
-            <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-4 transform translate-y-8 opacity-0 transition-all duration-800 ease-out">Exclusive VIP Night</h2>
-            <p class="text-xl text-white/90 mb-6 transform translate-y-8 opacity-0 transition-all duration-800 ease-out delay-100">An intimate evening with haute couture and champagne</p>
-            <a href="#tickets" class="inline-block bg-accent text-white font-medium py-3 px-8 rounded-full hover:bg-accent/90 transition-colors transform translate-y-8 opacity-0 transition-all duration-800 ease-out delay-200">Book Experience</a>
-          </div>
-        </div>
+<section id="home" class="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden">
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('/assets/pattern.svg')] bg-repeat opacity-10"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 z-10">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="hero-title text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+        Premium <span class="text-amber-600">Sunglasses</span> for Every Style
+      </h1>
+      <p class="hero-subtitle text-xl text-gray-600 mb-10">
+        Discover our exclusive collection with 100% UV protection and polarized lenses.
+      </p>
+      <div class="hero-cta">
+        <a href="#pricing" class="inline-block bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-amber-700 transition shadow-lg hover:shadow-xl">
+          Explore Collection
+        </a>
       </div>
     </div>
-    
-    <!-- Navigation -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-      <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-index="0"></button>
-      <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-index="1"></button>
-      <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-index="2"></button>
-    </div>
-    
-    <!-- Arrows -->
-    <button class="carousel-prev absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-md transition-all duration-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <button class="carousel-next absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-md transition-all duration-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
+  </div>
+  
+  <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+    <a href="#about" class="animate-bounce text-gray-600 hover:text-amber-600">
+      <i class="fas fa-chevron-down text-2xl"></i>
+    </a>
   </div>
 </section>
-
-<style>
-  .carousel-slide {
-    transition: opacity 0.8s ease-in-out;
-  }
-  
-  .carousel-slide.active {
-    opacity: 1;
-    z-index: 5;
-  }
-  
-  .carousel-slide.active h2,
-  .carousel-slide.active p,
-  .carousel-slide.active a {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .carousel-indicator.active {
-    width: 1.5rem;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  
-  .carousel-prev:hover, .carousel-next:hover {
-    transform: scale(1.1) translateY(-50%);
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-    const indicators = document.querySelectorAll('.carousel-indicator');
-    const carousel = document.querySelector('.carousel-container');
-    
-    // Early return if required elements aren't found
-    if (!slides.length || !prevBtn || !nextBtn || !indicators.length || !carousel) {
-      console.error('Carousel elements not found');
-      return;
-    }
-    
-    let currentIndex = 0;
-    let isAnimating = false;
-    let autoSlideInterval: number | undefined;
-    const slideCount = slides.length;
-    
-    // Initialize the carousel
-    function initCarousel() {
-      // Set initial slide
-      goToSlide(0, false);
-      startAutoSlide();
-    }
-    
-    // Transition to specific slide
-    function goToSlide(index: number, animate = true) {
-      if (isAnimating) return;
-      isAnimating = true;
-      
-      // Wrap around if at ends
-      if (index >= slideCount) index = 0;
-      if (index < 0) index = slideCount - 1;
-      
-      // Handle current active slide
-      const currentSlide = slides[currentIndex] as HTMLElement;
-      currentSlide.classList.remove('active');
-      
-      // Reset content animations for the current slide
-      if (animate) {
-        const currentContent = currentSlide.querySelectorAll('h2, p, a');
-        currentContent.forEach(element => {
-          if (element instanceof HTMLElement) {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(2rem)';
-          }
-        });
-      }
-      
-      // Set new current index
-      currentIndex = index;
-      
-      // Activate new slide
-      const newSlide = slides[currentIndex] as HTMLElement;
-      setTimeout(() => {
-        newSlide.classList.add('active');
-        
-        // Animate content for new slide
-        const newContent = newSlide.querySelectorAll('h2, p, a');
-        newContent.forEach((element, i) => {
-          if (element instanceof HTMLElement) {
-            setTimeout(() => {
-              element.style.opacity = '1';
-              element.style.transform = 'translateY(0)';
-            }, i * 150);
-          }
-        });
-        
-        // Update indicators
-        updateIndicators();
-        
-        // Reset animation flag after transition completes
-        setTimeout(() => {
-          isAnimating = false;
-        }, 800);
-      }, animate ? 50 : 0);
-    }
-    
-    function updateIndicators() {
-      indicators.forEach((indicator, i) => {
-        indicator.classList.toggle('active', i === currentIndex);
-      });
-    }
-    
-    function startAutoSlide() {
-      stopAutoSlide(); // Clear any existing interval
-      autoSlideInterval = window.setInterval(() => {
-        goToSlide(currentIndex + 1);
-      }, 6000);
-    }
-    
-    function stopAutoSlide() {
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = undefined;
-      }
-    }
-    
-    // Event listeners
-    nextBtn.addEventListener('click', () => {
-      stopAutoSlide();
-      goToSlide(currentIndex + 1);
-      startAutoSlide();
-    });
-    
-    prevBtn.addEventListener('click', () => {
-      stopAutoSlide();
-      goToSlide(currentIndex - 1);
-      startAutoSlide();
-    });
-    
-    indicators.forEach(indicator => {
-      indicator.addEventListener('click', () => {
-        const dataIndex = indicator.getAttribute('data-index');
-        if (dataIndex !== null) {
-          const index = parseInt(dataIndex);
-          if (currentIndex !== index) {
-            stopAutoSlide();
-            goToSlide(index);
-            startAutoSlide();
-          }
-        }
-      });
-    });
-    
-    // Pause on hover
-    carousel.addEventListener('mouseenter', stopAutoSlide);
-    carousel.addEventListener('mouseleave', startAutoSlide);
-    
-    // Handle visibility change to prevent animation issues when tab is inactive
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        stopAutoSlide();
-      } else {
-        startAutoSlide();
-      }
-    });
-    
-    // Initialize the carousel
-    initCarousel();
-  });
-</script>

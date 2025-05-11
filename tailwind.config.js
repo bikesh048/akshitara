@@ -1,16 +1,16 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      colors: {
-        primary: "#1a1a1a",
-        secondary: "#f8f8f8",
-        accent: "#ff3366",
-      },
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],
-        display: ["Playfair Display", "serif"],
+        sans: ["Poppins", "sans-serif"],
+      },
+      colors: {
+        amber: {
+          600: "#F59E0B",
+          700: "#D97706",
+        },
       },
     },
   },

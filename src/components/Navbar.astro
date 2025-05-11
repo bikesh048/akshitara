@@ -1,0 +1,36 @@
+---
+// Simple Navbar component
+const navItems = [
+    { name: 'About', href: '#about' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Contact', href: '#contact' },
+];
+---
+<nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm py-3 transition-all duration-300">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    {/* Brand Logo/Name */}
+    <a href="#hero" class="text-2xl font-bold text-brand-dark hover:text-brand-primary transition-colors">
+      Sunnies<span class="text-brand-primary">.</span> {/* Example logo text */}
+    </a>
+
+    {/* Navigation Links */}
+    <div class="hidden md:flex space-x-6">
+      {navItems.map(item => (
+        <a href={item.href} class="text-gray-600 hover:text-brand-primary transition-colors font-medium">
+          {item.name}
+        </a>
+      ))}
+    </div>
+
+    {/* Optional: Mobile Menu Button (requires JS for toggle) */}
+    <div class="md:hidden">
+      <button aria-label="Open menu" class="text-brand-dark focus:outline-none">
+        {/* Simple SVG Menu Icon */}
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  {/* Optional: Mobile Menu Panel (requires JS) */}
+</nav>

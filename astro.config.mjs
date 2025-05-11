@@ -7,7 +7,7 @@ export default defineConfig({
   //   plugins: [tailwindcss()],
   // },
   site: "https://bikesh048.github.io",
-  base: "/ucf",
+  // base: "/ucf",
   publicDir: "./public",
   output: "static",
   // outDir: "./docs",
