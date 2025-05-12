@@ -1,0 +1,94 @@
+---
+// src/components/HeroBento.astro
+---
+
+<section id="home" class="relative py-16 md:py-24 bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('/assets/pattern.svg')] bg-repeat opacity-10"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 z-10">
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6">
+        
+        <!-- Main Heading - Spans 2 columns -->
+        <div class="md:col-span-2 bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col justify-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Premium <span class="text-amber-600">Sunglasses</span> for Every Style
+          </h1>
+          <p class="text-lg text-gray-600 mb-6">
+            Discover our exclusive collection with 100% UV protection and polarized lenses.
+          </p>
+          <div>
+            <a href="#pricing" class="inline-block bg-amber-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-amber-700 transition shadow-md hover:shadow-lg">
+              Explore Collection
+            </a>
+          </div>
+        </div>
+        
+        <!-- Featured Product Image -->
+        <div class="md:col-span-2 bg-gradient-to-tr from-amber-100 to-amber-50 rounded-3xl overflow-hidden shadow-lg relative h-80 md:h-auto">
+          <img 
+            src="/assets/featured-sunglasses.jpg" 
+            alt="Featured Sunglasses" 
+            class="w-full h-full object-cover object-center"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+            <p class="text-white text-lg font-medium">New Arrival</p>
+            <h3 class="text-white text-xl font-bold">Milano Collection</h3>
+          </div>
+        </div>
+        
+        <!-- Video Showcase -->
+        <div class="md:col-span-2 bg-gray-900 rounded-3xl overflow-hidden shadow-lg h-64 md:h-auto relative">
+          <video 
+            autoplay 
+            muted 
+            loop 
+            class="w-full h-full object-cover opacity-80"
+          >
+            <source src="/assets/sunglasses-showcase.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-6">
+              <p class="text-white text-xl font-bold mb-2">See the Difference</p>
+              <p class="text-white/80 text-sm">Experience our polarized technology</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Customer Reviews -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="text-amber-500 flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="ml-2 text-gray-700 font-medium">4.9/5</p>
+          </div>
+          <p class="text-gray-600 italic">"These are the best sunglasses I've ever owned. Stylish and protective!"</p>
+          <p class="text-gray-800 font-medium mt-3">- Emma S.</p>
+        </div>
+        
+        <!-- Special Offer -->
+        <div class="bg-amber-600 rounded-3xl p-6 shadow-lg text-white">
+          <h3 class="text-xl font-bold mb-2">Limited Offer</h3>
+          <p class="mb-4">Get 20% off your first purchase with code:</p>
+          <div class="bg-white/20 rounded-lg p-2 text-center font-mono font-bold">
+            SUNNY20
+          </div>
+        </div>
+      </div>
+      
+      <!-- Down Arrow -->
+      <div class="mt-10 flex justify-center">
+        <a href="#about" class="animate-bounce text-gray-600 hover:text-amber-600">
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
